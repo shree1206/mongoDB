@@ -1,0 +1,18 @@
+string, boolean, integer(32, 64), date, timestamp, array, object, null, double
+
+db.students.insertOne(
+    { 
+        name:"Vaibhav",
+        age:25,
+        isMarried:false,
+        DOB: new Date(),
+        hobbies: ['cricket', 'hockey', 'football'],
+        address:{
+            "city":"chandausi",
+            "dist":"sambhal",
+            "zip": 244412
+        },
+        kids:null,
+        weight:81.5
+    }
+)
