@@ -1,0 +1,12 @@
+1.  check the database list
+    show dbs
+
+2.  create new database and drop it
+    use school
+    db.dropDatabase()
+
+3. create new collection, rename, drop, and show
+    db.school.createCollection('students')
+    db.students.renameCollection('changedname')
+    db.students.drop()
+    show collections
