@@ -1,0 +1,13 @@
+collection name: students
+
+db.students.insertOne(
+    {name:"Akshay Kumar", age:25}
+)
+
+db.students.insertMany(
+    [
+        {name:"Kumar", age:35},
+        {name:"Vaibhav", age:31},
+        {name:"Shree", age:12}
+    ]
+)
