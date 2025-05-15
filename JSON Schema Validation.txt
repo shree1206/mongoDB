@@ -1,0 +1,48 @@
+db.createCollection('personal',{
+    validator:{
+        $jsonSchema:{
+            title: 'Validation Schema',
+            required:['name', 'age'],
+            properties:{
+                name:{
+                    bsonType: 'string',
+                    description:'Name field is required'
+                },
+                course:{
+                    bsonType: 'string',
+                    enum:['MBA','BCA','Btech'],
+                    description: 'course must be MBA, BCA, Btech'
+                },
+                age:{
+                    bsonType:'int',
+                    minimum:20,
+                    maximum:35,
+                    description:'Age must be integer between 20 and 35'
+                },
+                hobbies:{
+                    bsonType: 'array',
+                    items:{ bsonType: 'string'},
+                    description:'should be choose values of array'
+                },
+
+                address:{
+                    bsonType: 'object',
+                    properties:{
+                        city:{
+                            bsonType: 'string',
+                            description:'City should be string'
+                        },
+                        dist:{
+                            bsonType: 'string',
+                            description:'Dist should be string'
+                        },
+                        zip:{
+                            bsonType: 'int',
+                            description:'ZIP should be integer'
+                        }
+                    }
+                },
+            }
+        }
+    }
+});
