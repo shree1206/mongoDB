@@ -1,0 +1,15 @@
+db.runCommand({
+    collMod:'students', //collections name
+    validator:{
+        $jsonSchema:{
+            title:'Modify collection with Validation Scema',
+            required:['name','age'],
+            properties:{
+                name:{
+                    bsonType:'string',
+                    description:'Name is required'
+                }
+            }
+        }
+    }
+})
